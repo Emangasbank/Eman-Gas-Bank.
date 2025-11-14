@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eman Gas Bank</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; }
+        header { background: linear-gradient(90deg, #b30000, #000); padding: 30px; text-align: center; font-size: 36px; font-weight: bold; letter-spacing: 3px; text-shadow: 2px 2px 5px #000; }
+        nav { background: #000; padding: 15px; text-align: center; letter-spacing: 1px; position: fixed; top: 0; left: 0; width: 100%; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+        nav a { color: #fff; margin: 0 20px; text-decoration: none; font-size: 20px; font-weight: bold; }
+        section { padding: 60px 25px; line-height: 1.8; }
+        .gallery img { width: 30%; margin: 1%; border-radius: 10px; opacity: 0; transform: translateY(20px); animation: fadeInUp 1s ease forwards; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .gallery img:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(255,0,0,0.5); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .mobile-menu-icon {
+            display: none;
+            font-size: 32px;
+            color: white;
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100vh;
+            background: #111;
+            padding-top: 80px;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.7);
+            z-index: 999;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        @media (max-width: 800px) {
+            nav a { display: none; }
+            .mobile-menu-icon { display: block; }
+        }
+
+        @media (max-width: 600px) {
+            .gallery img {
+                width: 95% !important;
+                margin: 10px 0 !important;
+                animation: fadeInMobile 0.8s ease forwards;
+            }
+        }
+        @keyframes fadeInMobile {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body style="margin-top:80px;">
+    <header>Eman Gas Bank</header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#products" onclick="toggleMenu()">Products</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <section id="home">
+        <h1>Welcome to Eman Gas Bank</h1>
+        <p>Your trusted source for safe and reliable gas products</p>
+        <p>آپ کا بھروسہ مند گیس اسٹور</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products / ہماری مصنوعات</h2>
+        <div class="gallery">
+            <img src="images/pic1.jpg" />
+            <img src="images/pic2.jpg" />
+            <img src="images/pic3.jpg" />
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us / ہمارے بارے میں</h2>
+        <p>Eman Gas Bank provides high-quality gas cylinders, heaters, and stoves at affordable prices.</p>
+        <p>ایمان گیس بینک اعلیٰ معیار کے سلنڈر، ہیٹر اور اسٹووز مناسب قیمت پر فراہم کرتا ہے۔</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us / رابطہ کریں</h2>
+        <p>📍 Marwa Town, Islamabad<br>📞 0314-5674413</p>
+        <iframe src="https://maps.google.com/maps?q=Marwa%20Town%20Islamabad&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </section>
+
+    <a class="float-btn whatsapp" href="https://wa.me/923145674413" target="_blank">WhatsApp</a>
+    <a class="float-btn" href="tel:03145674413">Call Now</a>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
